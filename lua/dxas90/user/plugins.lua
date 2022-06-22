@@ -49,11 +49,11 @@ return packer.startup(function(use)
   use 'hashivim/vim-terraform'
 
   -- Colorschemes
-  use 'tomasr/molokai'
-  use 'dracula/vim'
+  -- use 'tomasr/molokai'
+  -- use 'dracula/vim'
   -- use 'gosukiwi/vim-atom-dark'
   -- use 'tomasiser/vim-code-dark'
-  -- use 'bluz71/vim-nightfly-guicolors'
+  use 'bluz71/vim-nightfly-guicolors'
   -- use 'yonlu/omni.vim'
   -- use 'navarasu/onedark.nvim'
   -- use 'rose-pine/neovim'
