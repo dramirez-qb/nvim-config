@@ -117,6 +117,10 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
+  -- https://github.com/hrsh7th/nvim-cmp/issues/936
+  window = {
+    documentation = cmp.config.window.bordered(),
+  },
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
