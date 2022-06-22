@@ -49,76 +49,77 @@ return packer.startup(function(use)
   use 'hashivim/vim-terraform'
 
   -- Colorschemes
-	use 'tomasr/molokai'
-	use 'dracula/vim'
-	use 'gosukiwi/vim-atom-dark'
-  use 'tomasiser/vim-code-dark'
-  use 'bluz71/vim-nightfly-guicolors'
-  use 'yonlu/omni.vim'
-  use 'navarasu/onedark.nvim'
-  use 'rose-pine/neovim'
-  use 'ishan9299/nvim-solarized-lua'
+  use 'tomasr/molokai'
+  use 'dracula/vim'
+  -- use 'gosukiwi/vim-atom-dark'
+  -- use 'tomasiser/vim-code-dark'
+  -- use 'bluz71/vim-nightfly-guicolors'
+  -- use 'yonlu/omni.vim'
+  -- use 'navarasu/onedark.nvim'
+  -- use 'rose-pine/neovim'
+  -- use 'ishan9299/nvim-solarized-lua'
 
-	-- File explorer
+  -- File explorer
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
     config = function() require'nvim-tree'.setup {} end
   }
 
-	use {'akinsho/bufferline.nvim'}
+  use {'akinsho/bufferline.nvim'}
 
-	-- Git integration
-	use "tpope/vim-fugitive"
-	use "mhinz/vim-signify"
-	
-	-- Fuzzy finder 
-	use {
-  	'nvim-telescope/telescope.nvim',
-  	requires = { {'nvim-lua/plenary.nvim'} }
-	}
+  -- Git integration
+  use "tpope/vim-fugitive"
+  use "mhinz/vim-signify"
+  
+  -- Fuzzy finder 
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-	-- Syntax highlight
-	use {
+  -- Syntax highlight
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-	use 'p00f/nvim-ts-rainbow'
+  use 'p00f/nvim-ts-rainbow'
 
-	-- Autocompletion
-	use {
-		"hrsh7th/nvim-cmp", -- The completion plugin
-		requires = { "L3MON4D3/LuaSnip" }
-	}
+  -- Autocompletion
+  use {
+    "hrsh7th/nvim-cmp", -- The completion plugin
+    requires = { "L3MON4D3/LuaSnip" }
+  }
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions 
-	use "saadparwaiz1/cmp_luasnip" -- snippet completions
-	use "rafamadriz/friendly-snippets" -- snippets collection
-	use "hrsh7th/cmp-nvim-lsp"
-	
-	-- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-	}
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "rafamadriz/friendly-snippets" -- snippets collection
+  use "hrsh7th/cmp-nvim-lsp"
+  
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 
-	-- Linting and formatting
-	use "jose-elias-alvarez/null-ls.nvim"
+  -- Linting and formatting
+  use "jose-elias-alvarez/null-ls.nvim"
 
-	-- Status line
-    use {
-		'nvim-lualine/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
-	}
+  -- Status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 
-	-- auto tag and autp pairs
-	use "windwp/nvim-ts-autotag"
-	use "windwp/nvim-autopairs"
+  -- auto tag and autp pairs
+  use "windwp/nvim-ts-autotag"
+  use "windwp/nvim-autopairs"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
