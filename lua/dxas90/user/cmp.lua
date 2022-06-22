@@ -45,6 +45,17 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
+  -- https://github.com/hrsh7th/nvim-cmp/issues/936
+  window = {
+    documentation = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
+    completion = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
+},
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -109,6 +120,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
@@ -116,13 +128,6 @@ cmp.setup {
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
-  },
-  -- https://github.com/hrsh7th/nvim-cmp/issues/936
-  window = {
-    documentation = cmp.config.window.bordered(),
-  },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
     ghost_text = true,
